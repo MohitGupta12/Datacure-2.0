@@ -1,6 +1,7 @@
-import 'package:dc/pages/getting_started/widget/custom_header_text.dart';
-import 'package:dc/pages/getting_started/widget/custom_text.dart';
+import 'package:dc/pages/getting_started/widget/widgets.dart';
 import 'package:flutter/material.dart';
+
+import '../../signup/view/signup_screen.dart';
 
 class GettingStartedScreen extends StatelessWidget {
   const GettingStartedScreen({super.key});
@@ -23,20 +24,24 @@ class GettingStartedScreen extends StatelessWidget {
             top: 200,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                CustomText(padding: 7, textContent: "Innovating"),
-                CustomText(
+              children: [
+                const CustomText(padding: 7, textContent: "Innovating"),
+                const CustomText(
                     textContent: "HealthCare",
                     bold: FontWeight.w500,
                     height: 55),
-                // CustomText(textContent: "one"),
-                CustomText(
-                  textContent: "one BlockChain",
-                  height: 40,
-                  // bold: FontWeight.bold,
-                  colors: Color.fromARGB(255, 40, 116, 215),
+                Row(
+                  children: const [
+                    CustomText(textContent: "one"),
+                    CustomText(
+                      textContent: " BlockChain",
+                      height: 40,
+                      // bold: FontWeight.bold,
+                      colors: Color.fromARGB(255, 40, 116, 215),
+                    ),
+                  ],
                 ),
-                CustomText(
+                const CustomText(
                   textContent: "at a TIME",
                   height: 43,
                 ),
@@ -65,11 +70,10 @@ class GettingStartedScreen extends StatelessWidget {
                       //child: Button(),
 
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const Signup()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Signup()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 5,
@@ -117,7 +121,7 @@ class GettingStartedScreen extends StatelessWidget {
                           child: Text('Login',
                               style: TextStyle(
                                   fontSize: 24.0,
-                                  color: const Color(0xff2d3c4e),
+                                  color: Color(0xff2d3c4e),
                                   fontWeight: FontWeight.bold)),
                         ),
                       ),
