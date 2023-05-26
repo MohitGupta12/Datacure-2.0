@@ -1,6 +1,7 @@
 import 'package:dc/pages/getting_started/widget/widgets.dart';
 import 'package:flutter/material.dart';
 
+import '../../login/view/login_screen.dart';
 import '../../signup/view/signup_screen.dart';
 
 class GettingStartedScreen extends StatelessWidget {
@@ -100,11 +101,11 @@ class GettingStartedScreen extends StatelessWidget {
                     child: ElevatedButton(
                       //child: Button(),
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const LoginPage()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 5,
