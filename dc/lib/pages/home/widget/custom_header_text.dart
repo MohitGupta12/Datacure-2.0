@@ -4,18 +4,16 @@ class CustomHeaderClass extends StatelessWidget {
   final String textContent;
   final double size;
   final Color colors;
-  final double? padding;
-  const CustomHeaderClass(
-      {super.key,
-      required this.textContent,
-      required this.colors,
-      this.size = 40,
-      this.padding});
+  const CustomHeaderClass({
+    super.key,
+    required this.textContent,
+    required this.colors,
+    this.size = 40,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsetsDirectional.all(padding!),
+    return Center(
       child: Text(
         textContent,
         style: TextStyle(

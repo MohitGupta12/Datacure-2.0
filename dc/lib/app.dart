@@ -1,3 +1,4 @@
+// import 'package:dc/pages/main_screen.dart';
 import 'package:dc/pages/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 

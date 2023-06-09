@@ -1,3 +1,4 @@
+import 'package:dc/pages/main_screen.dart';
 import 'package:flutter/material.dart';
 import '../../getting_started/widget/custom_header_text.dart';
 
@@ -97,6 +98,11 @@ class LoginPage extends StatelessWidget {
                           //child: Button(),
                           // // TODO: add onpressed function here
                           onPressed: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MainScreen()),
+                            )
                             // Navigator.push(
                             //   context,
                             //   MaterialPageRoute(
@@ -155,13 +161,7 @@ class LoginPage extends StatelessWidget {
                         margin: const EdgeInsets.symmetric(horizontal: 80),
                         child: ElevatedButton(
                           //child: Button(),
-                          onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => const LoginPage()),
-                            // );
-                          },
+                          onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             elevation: 5,
                             minimumSize: const Size(0, 40),
