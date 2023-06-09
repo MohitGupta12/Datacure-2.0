@@ -40,11 +40,11 @@ class ProfileSettingsPage extends StatelessWidget {
                       description: 'Manage your account settings',
                       onTap: () {
                         // Navigate to My Account page
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const AccountPage()),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) => const AccountPage()),
+                        // );
                       },
                     ),
                     divider(),
