@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class BottomNavBar extends StatefulWidget {
   final int currentIndex;
@@ -30,7 +31,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
           Center(
             heightFactor: 0.6,
             child: FloatingActionButton(
-              onPressed: () async {},
+              onPressed: () async {
+                final imagePicker = ImagePicker();
+                final image =
+                    await imagePicker.pickImage(source: ImageSource.camera);
+              },
               elevation: 0.1,
               backgroundColor: const Color.fromARGB(255, 40, 60, 78),
               child: const Icon(Icons.camera_alt),
@@ -168,200 +173,6 @@ class BNBCustomPainter extends CustomPainter {
 
 
 
-
-
-
-// import 'package:flutter/material.dart';
-
-// class BottomNavBar extends StatefulWidget {
-//   const BottomNavBar({super.key});
-
-//   // final BuildContext contexts;
-
-//   // const BottomNavBar({required this.contexts, super.key});
-
-//   @override
-//   State<BottomNavBar> createState() => _BottomNavBarState();
-// }
-
-// class _BottomNavBarState extends State<BottomNavBar> {
-//   var currentIndex = 0;
-
-//   setBottomBarIndex(index) {
-//     setState(() {
-//       currentIndex = index;
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     Size size = MediaQuery.of(context).size;
-//     return Container(
-//       decoration:
-//           const BoxDecoration(color: Color.fromARGB(255, 235, 244, 254)),
-//       child: Stack(
-//         children: [
-//           CustomPaint(
-//             size: Size(size.width, size.width * .180),
-//             painter: BNBCustomPainter(),
-//           ),
-//           Center(
-//             heightFactor: .6,
-//             child: FloatingActionButton(
-//               onPressed: () async {},
-//               elevation: .1,
-//               backgroundColor: const Color.fromARGB(255, 40, 60, 78),
-//               child: const Icon(Icons.camera_alt),
-//             ),
-//           ),
-//           SizedBox(
-//             width: size.width,
-//             height: 70,
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//               children: [
-//                 Column(
-//                   children: [
-//                     AnimatedContainer(
-//                       duration: const Duration(milliseconds: 1500),
-//                       curve: Curves.fastLinearToSlowEaseIn,
-//                       margin: EdgeInsets.only(
-//                         bottom: currentIndex == 0 ? 0 : size.width * .029,
-//                         right: size.width * .02,
-//                         left: size.width * .02,
-//                       ),
-//                       width: size.width * .10,
-//                       height: currentIndex == 0 ? size.width * .014 : 0,
-//                       decoration: const BoxDecoration(
-//                         color: Colors.white,
-//                         borderRadius: BorderRadius.vertical(
-//                           bottom: Radius.circular(10),
-//                         ),
-//                       ),
-//                     ),
-//                     IconButton(
-//                       icon: Icon(
-//                         Icons.home,
-//                         color: currentIndex == 0
-//                             ? Colors.white
-//                             : Colors.grey.shade400,
-//                       ),
-//                       onPressed: () {
-//                         setBottomBarIndex(0);
-//                       },
-//                       splashColor: Colors.white,
-//                     ),
-//                     // SizedBox(height: size.width * .03),
-//                   ],
-//                 ),
-//                 Column(
-//                   children: [
-//                     AnimatedContainer(
-//                       duration: const Duration(milliseconds: 1500),
-//                       curve: Curves.fastLinearToSlowEaseIn,
-//                       margin: EdgeInsets.only(
-//                         bottom: currentIndex == 1 ? 0 : size.width * .029,
-//                         right: size.width * .02,
-//                         left: size.width * .02,
-//                       ),
-//                       width: size.width * .10,
-//                       height: currentIndex == 1 ? size.width * .014 : 0,
-//                       decoration: const BoxDecoration(
-//                         color: Colors.white,
-//                         borderRadius: BorderRadius.vertical(
-//                           bottom: Radius.circular(10),
-//                         ),
-//                       ),
-//                     ),
-//                     IconButton(
-//                         icon: Icon(
-//                           Icons.lock,
-//                           color: currentIndex == 1
-//                               ? Colors.white
-//                               : Colors.grey.shade400,
-//                         ),
-//                         onPressed: () {
-//                           setBottomBarIndex(1);
-//                         }),
-//                     // SizedBox(height: size.width * .03),
-//                   ],
-//                 ),
-//                 Container(
-//                   width: size.width * 0.20,
-//                 ),
-//                 Column(
-//                   children: [
-//                     AnimatedContainer(
-//                       duration: const Duration(milliseconds: 1500),
-//                       curve: Curves.fastLinearToSlowEaseIn,
-//                       margin: EdgeInsets.only(
-//                         bottom: currentIndex == 2 ? 0 : size.width * .029,
-//                         right: size.width * .02,
-//                         left: size.width * .02,
-//                       ),
-//                       width: size.width * .10,
-//                       height: currentIndex == 2 ? size.width * .014 : 0,
-//                       decoration: const BoxDecoration(
-//                         color: Colors.white,
-//                         borderRadius: BorderRadius.vertical(
-//                           bottom: Radius.circular(10),
-//                         ),
-//                       ),
-//                     ),
-//                     IconButton(
-//                         icon: Icon(
-//                           Icons.bookmark,
-//                           color: currentIndex == 2
-//                               ? Colors.white
-//                               : Colors.grey.shade400,
-//                         ),
-//                         onPressed: () {
-//                           setBottomBarIndex(2);
-//                         }),
-
-//                     // SizedBox(height: size.width * .03),
-//                   ],
-//                 ),
-//                 Column(
-//                   children: [
-//                     AnimatedContainer(
-//                       duration: const Duration(milliseconds: 1500),
-//                       curve: Curves.fastLinearToSlowEaseIn,
-//                       margin: EdgeInsets.only(
-//                         bottom: currentIndex == 3 ? 0 : size.width * .029,
-//                         right: size.width * .02,
-//                         left: size.width * .02,
-//                       ),
-//                       width: size.width * .10,
-//                       height: currentIndex == 3 ? size.width * .014 : 0,
-//                       decoration: const BoxDecoration(
-//                         color: Colors.transparent,
-//                         borderRadius: BorderRadius.vertical(
-//                           bottom: Radius.circular(10),
-//                         ),
-//                       ),
-//                     ),
-//                     IconButton(
-//                         icon: Icon(
-//                           Icons.notifications,
-//                           color: currentIndex == 3
-//                               ? Colors.white
-//                               : Colors.grey.shade400,
-//                         ),
-//                         onPressed: () {
-//                           setBottomBarIndex(3);
-//                         }),
-//                     // SizedBox(height: size.width * .03),
-//                   ],
-//                 ),
-//               ],
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 // class BNBCustomPainter extends CustomPainter {
 //   @override

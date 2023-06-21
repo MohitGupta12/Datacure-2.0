@@ -1,4 +1,3 @@
-import 'package:dc/pages/account_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfileSettingsPage extends StatelessWidget {
